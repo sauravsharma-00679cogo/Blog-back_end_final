@@ -15,7 +15,9 @@ class ArticlesController < ApplicationController
         "description" => params["description"],
         "url" => params["url"],
         "views" => params["views"],
-        "author_id" => params["author_id"]
+        "author_name" => params["author_name"],
+        "content" => params["content"]
+        # "author_id" => params["author_id"]
         }
         article = Article.new(add_article);
         article.save
@@ -27,7 +29,9 @@ class ArticlesController < ApplicationController
             "title" => params["title"],
             "description" => params["description"],
             "url" => params["url"],
-            "views" => params["views"]
+            "views" => params["views"],
+            "author_name" => params["author_name"],
+            "content" => params["content"]
             }
         article.update(article_update) 
         render json: article 
